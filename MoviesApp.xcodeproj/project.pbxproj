@@ -22,6 +22,9 @@
 		0AC318A226EAAE26008E8CD3 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC318A126EAAE26008E8CD3 /* FavoriteView.swift */; };
 		0AC318A526EAAE34008E8CD3 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC318A326EAAE34008E8CD3 /* FavoriteVC.swift */; };
 		0AC318A626EAAE34008E8CD3 /* FavoriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC318A426EAAE34008E8CD3 /* FavoriteVC.xib */; };
+		0AC318A926EABD60008E8CD3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC318A826EABD60008E8CD3 /* Constant.swift */; };
+		0AC318AB26EABE07008E8CD3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC318AA26EABE07008E8CD3 /* NetworkManager.swift */; };
+		0AC318AD26EABE19008E8CD3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC318AC26EABE19008E8CD3 /* Router.swift */; };
 		0ADEDFF726EA49D400F01BAC /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADEDFF526EA49D400F01BAC /* SplashVC.swift */; };
 		0ADEDFF826EA49D400F01BAC /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADEDFF626EA49D400F01BAC /* SplashVC.xib */; };
 		0ADEDFFA26EA49EB00F01BAC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADEDFF926EA49EB00F01BAC /* SplashView.swift */; };
@@ -60,6 +63,9 @@
 		0AC318A126EAAE26008E8CD3 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		0AC318A326EAAE34008E8CD3 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 		0AC318A426EAAE34008E8CD3 /* FavoriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteVC.xib; sourceTree = "<group>"; };
+		0AC318A826EABD60008E8CD3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0AC318AA26EABE07008E8CD3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0AC318AC26EABE19008E8CD3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		0ADEDFF526EA49D400F01BAC /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		0ADEDFF626EA49D400F01BAC /* SplashVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
 		0ADEDFF926EA49EB00F01BAC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 		0A9C597F26EA3E4B00FAA618 /* MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
+				0AC318A726EAB409008E8CD3 /* NetworkManager */,
 				0ADEDFFE26EA4EFE00F01BAC /* Extenstions */,
 				0ADEDFFB26EA4CF900F01BAC /* TabBarController */,
 				0A9C599626EA411500FAA618 /* Resources */,
@@ -247,6 +254,16 @@
 				0AC3189D26EAADF4008E8CD3 /* FavoriteModel.swift */,
 			);
 			path = FavoriteModel;
+			sourceTree = "<group>";
+		};
+		0AC318A726EAB409008E8CD3 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0AC318A826EABD60008E8CD3 /* Constant.swift */,
+				0AC318AA26EABE07008E8CD3 /* NetworkManager.swift */,
+				0AC318AC26EABE19008E8CD3 /* Router.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		0ADEDFF426EA49BB00F01BAC /* SplashVC */ = {
@@ -531,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC318AB26EABE07008E8CD3 /* NetworkManager.swift in Sources */,
 				0AF31C9E26EA9F1B008F6FD5 /* NowPlayingViewModel.swift in Sources */,
 				0AC3188826EAAA88008E8CD3 /* TopRatedModel.swift in Sources */,
 				0AC3189526EAACD1008E8CD3 /* SearchViewModel.swift in Sources */,
@@ -546,10 +564,12 @@
 				0AC3189726EAACE6008E8CD3 /* SearchModel.swift in Sources */,
 				0AF31CA226EA9F77008F6FD5 /* NowPlayingModel.swift in Sources */,
 				0AC3189326EAAC9A008E8CD3 /* SearchView.swift in Sources */,
+				0AC318AD26EABE19008E8CD3 /* Router.swift in Sources */,
 				0ADEE00026EA4F1C00F01BAC /* ViewController+Ext.swift in Sources */,
 				0ADEDFF726EA49D400F01BAC /* SplashVC.swift in Sources */,
 				0AC3189E26EAADF4008E8CD3 /* FavoriteModel.swift in Sources */,
 				0AF31C9C26EA9C0C008F6FD5 /* NowPlayingView.swift in Sources */,
+				0AC318A926EABD60008E8CD3 /* Constant.swift in Sources */,
 				0AC318A526EAAE34008E8CD3 /* FavoriteVC.swift in Sources */,
 				0ADEDFFA26EA49EB00F01BAC /* SplashView.swift in Sources */,
 			);
