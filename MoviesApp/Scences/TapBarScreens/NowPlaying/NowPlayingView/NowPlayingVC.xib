@@ -18,9 +18,24 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="NowPlayingView" customModule="MoviesApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-PW-g8l">
+                    <rect key="frame" x="12" y="48" width="390" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="139" y="141"/>
+            <constraints>
+                <constraint firstItem="cSY-PW-g8l" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="0Oc-GO-DE7"/>
+                <constraint firstItem="cSY-PW-g8l" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-12" id="8WA-9G-eCW"/>
+                <constraint firstItem="cSY-PW-g8l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="USr-2J-Re2"/>
+                <constraint firstItem="cSY-PW-g8l" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="4" id="bAq-mb-CdN"/>
+            </constraints>
+            <connections>
+                <outlet property="nowPlayingTable" destination="cSY-PW-g8l" id="jcB-Oz-wUb"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="140.625"/>
         </view>
     </objects>
     <resources>

@@ -80,13 +80,10 @@ extension UITabBarController {
     func returnBerryNavigationController(rootVC:UIViewController)-> UINavigationController {
         
         let nc = UINavigationController(rootViewController: rootVC)
-        
-        nc.navigationBar.titleTextAttributes = [.font:UIFont(name: "Cairo Bold", size: 16) ?? "",.foregroundColor: UIColor.white]
-        nc.navigationBar.tintColor = .white
-        
+        nc.navigationBar.titleTextAttributes = [.font:UIFont(name: "Cairo Bold", size: 16) ?? "",.foregroundColor: UIColor(named: "182890") as Any]
+        nc.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         nc.modalPresentationStyle = .fullScreen
         nc.modalTransitionStyle = .crossDissolve
-        
 //        nc.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 //        nc.navigationBar.shadowImage = UIImage()
                 return nc

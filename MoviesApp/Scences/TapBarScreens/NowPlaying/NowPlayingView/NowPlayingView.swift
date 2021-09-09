@@ -7,5 +7,5 @@
 
 import UIKit
 class NowPlayingView : UIView {
-    
+    @IBOutlet weak var nowPlayingTable: UITableView!
 }
