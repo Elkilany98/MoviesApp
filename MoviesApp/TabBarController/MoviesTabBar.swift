@@ -9,7 +9,6 @@ import UIKit
 
 class MoviesTabBar: UITabBarController , UITabBarControllerDelegate {
     
-       
        override func viewDidLoad() {
            super.viewDidLoad()
            self.delegate = self
@@ -20,39 +19,40 @@ class MoviesTabBar: UITabBarController , UITabBarControllerDelegate {
     func configureTabBarForNoCustom(){
 
         let tabBarAppearence = UITabBarItem.appearance()
-        UITabBar.appearance().tintColor = #colorLiteral(red: 0.4745098039, green: 0.4, blue: 0.9960784314, alpha: 1)
-        self.tabBar.backgroundColor = #colorLiteral(red: 0.8039215686, green: 0.8039215686, blue: 0.8039215686, alpha: 1)
-        let attribute = [NSAttributedString.Key.font:UIFont(name: "Cairo-Bold", size: 12)]
+        UITabBar.appearance().tintColor = #colorLiteral(red: 0.09411764706, green: 0.1568627451, blue: 0.5647058824, alpha: 1)
+        self.tabBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        let attribute = [NSAttributedString.Key.font:UIFont(name: "Cairo Bold", size: 12)]
         tabBarAppearence.setBadgeTextAttributes(attribute as [NSAttributedString.Key : Any], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(attribute as [NSAttributedString.Key : Any], for: .normal)
 
         
-        viewControllers = [maineNC() , childNC(),tasksNC(),statisticsNC()]
+        viewControllers = [nowPlayingVC(),nowPlayingVC(),nowPlayingVC() ]
+        //, childNC(),tasksNC(),statisticsNC()
     }
 
-    func maineNC() -> UINavigationController{
-        let mainVC = MainVC()
-        mainVC.tabBarItem = UITabBarItem(title: "Home".localized, image: UIImage(named: "homeTapBar"), tag: 0)
-        return self.returnBerryNavigationController(rootVC: mainVC)
+    func nowPlayingVC() -> UINavigationController{
+        let nowPlayingVC = NowPlayingVC()
+        nowPlayingVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(named: "favouriteTab"), tag: 0)
+        return self.returnBerryNavigationController(rootVC: nowPlayingVC)
     }
     
-    func childNC() -> UINavigationController {
-        let childVC = ChildVC()
-        childVC.tabBarItem = UITabBarItem(title: "Sons", image: UIImage(named: "paerentTabBar"), tag: 1)
-        return self.returnBerryNavigationController(rootVC: childVC)
-    }
-    
-    func tasksNC() -> UINavigationController {
-        let tasksVC = TasksVC()
-        tasksVC.tabBarItem = UITabBarItem(title: "mission", image: UIImage(named: "taskesTabBar"), tag: 2)
-        return self.returnBerryNavigationController(rootVC: tasksVC)
-    }
-    
-    func statisticsNC() -> UINavigationController {
-        let statisticsVC = StatisticsVC()
-        statisticsVC.tabBarItem = UITabBarItem(title: "statistics", image: UIImage(named: "stattiticesTabBar"), tag: 3)
-        return self.returnBerryNavigationController(rootVC: statisticsVC)
-    }
+//    func childNC() -> UINavigationController {
+//        let childVC = ChildVC()
+//        childVC.tabBarItem = UITabBarItem(title: "Sons", image: UIImage(named: "paerentTabBar"), tag: 1)
+//        return self.returnBerryNavigationController(rootVC: childVC)
+//    }
+//
+//    func tasksNC() -> UINavigationController {
+//        let tasksVC = TasksVC()
+//        tasksVC.tabBarItem = UITabBarItem(title: "mission", image: UIImage(named: "taskesTabBar"), tag: 2)
+//        return self.returnBerryNavigationController(rootVC: tasksVC)
+//    }
+//
+//    func statisticsNC() -> UINavigationController {
+//        let statisticsVC = StatisticsVC()
+//        statisticsVC.tabBarItem = UITabBarItem(title: "statistics", image: UIImage(named: "stattiticesTabBar"), tag: 3)
+//        return self.returnBerryNavigationController(rootVC: statisticsVC)
+//    }
     
    
     
@@ -81,7 +81,7 @@ extension UITabBarController {
         
         let nc = UINavigationController(rootViewController: rootVC)
         
-        nc.navigationBar.titleTextAttributes = [.font:UIFont(name: "Cairo-Bold", size: 16) ?? "",.foregroundColor: UIColor.white]
+        nc.navigationBar.titleTextAttributes = [.font:UIFont(name: "Cairo Bold", size: 16) ?? "",.foregroundColor: UIColor.white]
         nc.navigationBar.tintColor = .white
         
         nc.modalPresentationStyle = .fullScreen

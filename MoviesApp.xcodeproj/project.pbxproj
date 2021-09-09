@@ -183,6 +183,7 @@
 		0AF31C9326EA9BA2008F6FD5 /* NowPlayingView */ = {
 			isa = PBXGroup;
 			children = (
+				0AF31C9826EA9BE1008F6FD5 /* NowPlayingVC.xib */,
 				0AF31C9B26EA9C0C008F6FD5 /* NowPlayingView.swift */,
 			);
 			path = NowPlayingView;
@@ -192,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				0AF31C9726EA9BE1008F6FD5 /* NowPlayingVC.swift */,
-				0AF31C9826EA9BE1008F6FD5 /* NowPlayingVC.xib */,
 			);
 			path = NowPlayingVC;
 			sourceTree = "<group>";
