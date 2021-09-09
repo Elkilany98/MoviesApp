@@ -9,14 +9,15 @@ import Foundation
 import Alamofire
 
 enum Router: URLRequestConvertible {
-    case GetParentProfileData
+    
+    case nowPlaying(page:String)
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
         
-        case .GetParentProfileData:
-            return .post
+        case .nowPlaying:
+            return .get
                 default:
             return .get
         }
@@ -25,15 +26,20 @@ enum Router: URLRequestConvertible {
     // MARK: - Path
     private var path: String {
         switch self {
-         case .GetParentProfileData :return "Parent/GetParentProfileData"
+        case .nowPlaying : return "now_playing"
         }
     }
     
     // MARK: - Parameters
     private var parameters: RequestParams? {
         switch self {
-        case .GetParentProfileData :return nil
-               default:return nil
+         case let .nowPlaying(page):
+            return.url([
+                "api_key":Constants.apiKey,
+                "language":Constants.languageKey,
+                "page":page
+            ])
+        
         }
     }
     
@@ -47,18 +53,16 @@ enum Router: URLRequestConvertible {
         
         // HTTTP Method
         urlRequest.httpMethod = method.rawValue
+        
         // Common Headers
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
-        
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+        
 //        urlRequest.
         urlRequest.setValue("en", forHTTPHeaderField: HTTPHeaderField.lang.rawValue)
-      
-            urlRequest.setValue(nil, forHTTPHeaderField: HTTPHeaderField.authentication.rawValue)
-        
+        urlRequest.setValue(nil, forHTTPHeaderField: HTTPHeaderField.authentication.rawValue)
         
         if let parameters = parameters {
-
             switch parameters {
             case .body(let parameters):
                 do {
