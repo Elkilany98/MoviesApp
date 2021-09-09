@@ -41,5 +41,12 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Cairo-Bold</string>
+		<string>Cairo-Light</string>
+		<string>Cairo-Regular</string>
+		<string>Cairo-SemiBold</string>
+	</array>
 </dict>
 </plist>
