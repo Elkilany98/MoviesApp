@@ -26,7 +26,7 @@ class MoviesTabBar: UITabBarController , UITabBarControllerDelegate {
         UITabBarItem.appearance().setTitleTextAttributes(attribute as [NSAttributedString.Key : Any], for: .normal)
 
         
-        viewControllers = [nowPlayingNC(),topRatedNC() ]
+        viewControllers = [nowPlayingNC(),topRatedNC(),searchNC() ]
         //, childNC(),tasksNC(),statisticsNC()
     }
 
@@ -44,13 +44,12 @@ class MoviesTabBar: UITabBarController , UITabBarControllerDelegate {
 
     //searchTap
     //favouriteTab
-
     
-//    func tasksNC() -> UINavigationController {
-//        let tasksVC = TasksVC()
-//        tasksVC.tabBarItem = UITabBarItem(title: "mission", image: UIImage(named: "taskesTabBar"), tag: 2)
-//        return self.returnBerryNavigationController(rootVC: tasksVC)
-//    }
+    func searchNC() -> UINavigationController {
+        let searchVC = SearchVC()
+        searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "searchTap"), tag: 2)
+        return self.returnBerryNavigationController(rootVC: searchVC)
+    }
 //
 //    func statisticsNC() -> UINavigationController {
 //        let statisticsVC = StatisticsVC()
