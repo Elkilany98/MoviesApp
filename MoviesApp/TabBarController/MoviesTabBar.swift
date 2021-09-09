@@ -26,36 +26,33 @@ class MoviesTabBar: UITabBarController , UITabBarControllerDelegate {
         UITabBarItem.appearance().setTitleTextAttributes(attribute as [NSAttributedString.Key : Any], for: .normal)
 
         
-        viewControllers = [nowPlayingNC(),topRatedNC(),searchNC() ]
+        viewControllers = [nowPlayingNC(),topRatedNC(),searchNC(),favoriteNC() ]
         //, childNC(),tasksNC(),statisticsNC()
     }
 
     func nowPlayingNC() -> UINavigationController{
         let nowPlayingVC = NowPlayingVC()
-        nowPlayingVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(named: "videoTap"), tag: 0)
+        nowPlayingVC.tabBarItem = UITabBarItem(title: "Playing", image: UIImage(named: "videoTap"), tag: 0)
         return self.returnBerryNavigationController(rootVC: nowPlayingVC)
     }
 
         func topRatedNC() -> UINavigationController {
         let topRatedVC = TopRatedVC()
-        topRatedVC.tabBarItem = UITabBarItem(title: "Top Rated", image: UIImage(named: "ratingsTap"), tag: 1)
+        topRatedVC.tabBarItem = UITabBarItem(title: "Rated", image: UIImage(named: "ratingsTap"), tag: 1)
         return self.returnBerryNavigationController(rootVC: topRatedVC)
     }
 
-    //searchTap
-    //favouriteTab
-    
     func searchNC() -> UINavigationController {
         let searchVC = SearchVC()
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "searchTap"), tag: 2)
         return self.returnBerryNavigationController(rootVC: searchVC)
     }
-//
-//    func statisticsNC() -> UINavigationController {
-//        let statisticsVC = StatisticsVC()
-//        statisticsVC.tabBarItem = UITabBarItem(title: "statistics", image: UIImage(named: "stattiticesTabBar"), tag: 3)
-//        return self.returnBerryNavigationController(rootVC: statisticsVC)
-//    }
+
+    func favoriteNC() -> UINavigationController {
+        let favoriteVC = FavoriteVC()
+        favoriteVC.tabBarItem = UITabBarItem(title: "Favourite", image: UIImage(named: "favouriteTab"), tag: 3)
+        return self.returnBerryNavigationController(rootVC: favoriteVC)
+    }
     
    
     
