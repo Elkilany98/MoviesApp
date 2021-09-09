@@ -32,7 +32,7 @@ class MoviesTabBar: UITabBarController , UITabBarControllerDelegate {
 
     func nowPlayingVC() -> UINavigationController{
         let nowPlayingVC = NowPlayingVC()
-        nowPlayingVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(named: "favouriteTab"), tag: 0)
+        nowPlayingVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(named: "ratingsTap"), tag: 0)
         return self.returnBerryNavigationController(rootVC: nowPlayingVC)
     }
     

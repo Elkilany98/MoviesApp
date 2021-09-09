@@ -31,7 +31,7 @@ class SplashVC: UIViewController {
     }
     
     func gotoTabBar(){
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) { (timer) in
             self.setTabBarAsRoot()
         }
         
