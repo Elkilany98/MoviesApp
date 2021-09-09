@@ -27,7 +27,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mle-iW-62D">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mle-iW-62D" customClass="ShadowView" customModule="MoviesApp" customModuleProvider="target">
                         <rect key="frame" x="8" y="8" width="304" height="214"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Eva-Pharma-2" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-Kn-v15">
@@ -92,7 +92,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="containerView" destination="Mle-iW-62D" id="lWE-ZV-y46"/>
+                <outlet property="containerView" destination="Mle-iW-62D" id="uG2-Bz-SYo"/>
                 <outlet property="moviesImg" destination="4a5-Kn-v15" id="yvU-fE-bMV"/>
                 <outlet property="moviesTitleLab" destination="wSc-cU-IvJ" id="xgN-KV-Bjg"/>
                 <outlet property="voteAverageLab" destination="iV8-Uy-59K" id="f6n-nl-r8T"/>

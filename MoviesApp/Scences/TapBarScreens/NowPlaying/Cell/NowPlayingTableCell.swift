@@ -26,13 +26,8 @@ class NowPlayingTableCell: UITableViewCell {
     }
     
     func setUpCellView(){
-        moviesImg.layer.cornerRadius = 18
-        containerView.layer.cornerRadius = 12
-        containerView.layer.shadowColor = UIColor.darkGray.cgColor
-        containerView.layer.shadowOpacity = 0.35
-        containerView.layer.shadowRadius = 5
-        containerView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        containerView.layer.masksToBounds = false
+//        moviesImg.layer.cornerRadius = 22
+        containerView.layer.cornerRadius = 22
         selectionStyle = .none
     }
 
