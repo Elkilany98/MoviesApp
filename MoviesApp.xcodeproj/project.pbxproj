@@ -13,6 +13,7 @@
 		0ADEDFF726EA49D400F01BAC /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADEDFF526EA49D400F01BAC /* SplashVC.swift */; };
 		0ADEDFF826EA49D400F01BAC /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADEDFF626EA49D400F01BAC /* SplashVC.xib */; };
 		0ADEDFFA26EA49EB00F01BAC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADEDFF926EA49EB00F01BAC /* SplashView.swift */; };
+		0ADEDFFD26EA4DDE00F01BAC /* MoviesTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADEDFFC26EA4DDE00F01BAC /* MoviesTabBar.swift */; };
 		178CBEA0BB2FCD4822B7EF72 /* Pods_MoviesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57423E9746274BDA0ECCCCC2 /* Pods_MoviesApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		0ADEDFF526EA49D400F01BAC /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		0ADEDFF626EA49D400F01BAC /* SplashVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
 		0ADEDFF926EA49EB00F01BAC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		0ADEDFFC26EA4DDE00F01BAC /* MoviesTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTabBar.swift; sourceTree = "<group>"; };
 		22CBC3B5FA3F016D6796E13D /* Pods-MoviesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesApp.debug.xcconfig"; path = "Target Support Files/Pods-MoviesApp/Pods-MoviesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		57423E9746274BDA0ECCCCC2 /* Pods_MoviesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A0DB5534FD9EFA3DBC555E /* Pods-MoviesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesApp.release.xcconfig"; path = "Target Support Files/Pods-MoviesApp/Pods-MoviesApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		0A9C597F26EA3E4B00FAA618 /* MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
+				0ADEDFFB26EA4CF900F01BAC /* TabBarController */,
 				0A9C599626EA411500FAA618 /* Resources */,
 				0A9C599526EA410A00FAA618 /* Scences */,
 				0A9C599426EA410000FAA618 /* Core */,
@@ -113,6 +116,14 @@
 				0ADEDFF926EA49EB00F01BAC /* SplashView.swift */,
 			);
 			path = SplashVC;
+			sourceTree = "<group>";
+		};
+		0ADEDFFB26EA4CF900F01BAC /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				0ADEDFFC26EA4DDE00F01BAC /* MoviesTabBar.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		A4FA0D7CC64622908632D2FE /* Frameworks */ = {
@@ -237,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ADEDFFD26EA4DDE00F01BAC /* MoviesTabBar.swift in Sources */,
 				0A9C598126EA3E4B00FAA618 /* AppDelegate.swift in Sources */,
 				0ADEDFF726EA49D400F01BAC /* SplashVC.swift in Sources */,
 				0ADEDFFA26EA49EB00F01BAC /* SplashView.swift in Sources */,
