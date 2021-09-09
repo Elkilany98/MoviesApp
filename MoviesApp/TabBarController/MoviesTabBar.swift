@@ -26,22 +26,26 @@ class MoviesTabBar: UITabBarController , UITabBarControllerDelegate {
         UITabBarItem.appearance().setTitleTextAttributes(attribute as [NSAttributedString.Key : Any], for: .normal)
 
         
-        viewControllers = [nowPlayingVC(),nowPlayingVC(),nowPlayingVC() ]
+        viewControllers = [nowPlayingNC(),topRatedNC() ]
         //, childNC(),tasksNC(),statisticsNC()
     }
 
-    func nowPlayingVC() -> UINavigationController{
+    func nowPlayingNC() -> UINavigationController{
         let nowPlayingVC = NowPlayingVC()
-        nowPlayingVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(named: "ratingsTap"), tag: 0)
+        nowPlayingVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(named: "videoTap"), tag: 0)
         return self.returnBerryNavigationController(rootVC: nowPlayingVC)
     }
+
+        func topRatedNC() -> UINavigationController {
+        let topRatedVC = TopRatedVC()
+        topRatedVC.tabBarItem = UITabBarItem(title: "Top Rated", image: UIImage(named: "ratingsTap"), tag: 1)
+        return self.returnBerryNavigationController(rootVC: topRatedVC)
+    }
+
+    //searchTap
+    //favouriteTab
+
     
-//    func childNC() -> UINavigationController {
-//        let childVC = ChildVC()
-//        childVC.tabBarItem = UITabBarItem(title: "Sons", image: UIImage(named: "paerentTabBar"), tag: 1)
-//        return self.returnBerryNavigationController(rootVC: childVC)
-//    }
-//
 //    func tasksNC() -> UINavigationController {
 //        let tasksVC = TasksVC()
 //        tasksVC.tabBarItem = UITabBarItem(title: "mission", image: UIImage(named: "taskesTabBar"), tag: 2)
