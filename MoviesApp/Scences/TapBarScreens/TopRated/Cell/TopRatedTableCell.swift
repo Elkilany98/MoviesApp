@@ -58,7 +58,7 @@ class TopRatedTableCell: UITableViewCell {
         favoriteImageClosure?()
     }
     
-    var topRatedCellViewModel : TopRatedCellViewModel?  {
+    var topRatedCellViewModel : GeneralCellViewModel?  {
         didSet{
             moviesImg.kf.indicatorType = .activity
             moviesImg.kf.setImage(with:  URL(string: topRatedCellViewModel?.backdropPath ?? "" ), placeholder: UIImage(named: "PlaceholderIMage"), options: .none)

@@ -17,12 +17,12 @@ class NowPlayingViewModel {
     var reloadTableViewClosure : (()->())?
     var showAlertClosure : (()->())?
     var updateLoadingStatus : (()->())?
-    var tempList = [NowPlayingCellViewModel]()
+    var tempList = [GeneralCellViewModel]()
 
     private var pageCount = 1
     private var isGetMoreMovies = false
     
-    private var cellViewModel : [NowPlayingCellViewModel] = [NowPlayingCellViewModel](){
+    private var cellViewModel : [GeneralCellViewModel] = [GeneralCellViewModel](){
         didSet{
             self.reloadTableViewClosure?()
         }
@@ -56,6 +56,10 @@ class NowPlayingViewModel {
                 guard let list = value.results else {
                     return
                 }
+                if list.count == 0 || list.isEmpty == true {
+                    self.state = .isEmptyResult
+                    self.alertMessage = "There is no data"
+                }
                 
                 self.state = .isGetData
                 self.fetchTheMoviesList(nowPlaying: list)
@@ -71,7 +75,7 @@ class NowPlayingViewModel {
         }
     }
     
-    func getCellViewModel(index : IndexPath)->NowPlayingCellViewModel{
+    func getCellViewModel(index : IndexPath)->GeneralCellViewModel{
         return cellViewModel[index.row]
     }
     
@@ -83,9 +87,9 @@ class NowPlayingViewModel {
         self.cellViewModel = tempList
     }
     
-    func createCellViewModelFunctionality(movie:GeneralList) -> NowPlayingCellViewModel {
+    func createCellViewModelFunctionality(movie:GeneralList) -> GeneralCellViewModel {
         let urlPathImage = ("https://image.tmdb.org/t/p/w500" + (movie.backdropPath ?? "" ))
-            return NowPlayingCellViewModel(id: movie.id ?? 0 , backdropPath: urlPathImage, originalTitle:movie.originalTitle ?? "" , voteAverage: movie.voteAverage ?? 0.0)
+            return GeneralCellViewModel(id: movie.id ?? 0 , backdropPath: urlPathImage, originalTitle:movie.originalTitle ?? "" , voteAverage: movie.voteAverage ?? 0.0)
     }
     
     func paginateMoviesData(indexPaths:[IndexPath]){

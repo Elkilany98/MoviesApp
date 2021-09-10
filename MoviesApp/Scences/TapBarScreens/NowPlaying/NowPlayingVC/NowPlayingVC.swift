@@ -54,7 +54,7 @@ class NowPlayingVC: UIViewController {
         print("viewModel.state", viewModel.state)
         switch viewModel.state {
       
-        case .error , .isEmpty:
+        case .error , .isEmpty, .isEmptyResult:
             mainView.progress.stopAnimating()
             DispatchQueue.main.async {
                 if let message = self.viewModel.alertMessage{
@@ -80,7 +80,11 @@ class NowPlayingVC: UIViewController {
                 })
             }
             
-   
+        case .isTypSearchText:
+            return
+            
+        
+            
         }
         
         

@@ -12,4 +12,6 @@ public enum State {
     case error
     case isGetData
     case isEmpty
+    case isTypSearchText
+    case isEmptyResult
 }

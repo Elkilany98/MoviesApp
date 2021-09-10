@@ -1,15 +1,16 @@
 //
-//  NowPlayingTableCell.swift
+//  SearchTableCell.swift
 //  MoviesApp
 //
 //  Created by Mohamed Elkilany on 10/09/2021.
 //
 
 import UIKit
-import Kingfisher
-class NowPlayingTableCell: UITableViewCell {
 
-    static let cellID = "NowPlayingTableCell"
+class SearchTableCell: UITableViewCell {
+
+  
+    static let cellID = "SearchTableCell"
     
     @IBOutlet weak var containerView:UIView!
     @IBOutlet weak var moviesImg:UIImageView!
@@ -26,7 +27,6 @@ class NowPlayingTableCell: UITableViewCell {
     static func nib()->UINib{
         return UINib(nibName: cellID, bundle: nil)
     }
-  
 
     func setUpCellView(){
         favoriteAction()
@@ -38,7 +38,6 @@ class NowPlayingTableCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        favouritImg.image = nil
             isHidden = false
             isSelected = false
             isHighlighted = false
@@ -60,13 +59,12 @@ class NowPlayingTableCell: UITableViewCell {
         favoriteImageClosure?()
     }
     
-    var nowPlayingCellViewModel : GeneralCellViewModel?  {
+    var searchCellViewModel : GeneralCellViewModel?  {
         didSet{
-
             moviesImg.kf.indicatorType = .activity
-            moviesImg.kf.setImage(with:  URL(string: nowPlayingCellViewModel?.backdropPath ?? "" ), placeholder: UIImage(named: "PlaceholderIMage"), options: .none)
-            moviesTitleLab.text = nowPlayingCellViewModel?.originalTitle ?? ""
-            voteAverageLab.text =  "Vote Average: " +  "\(nowPlayingCellViewModel?.voteAverage ?? 0.0)"
+            moviesImg.kf.setImage(with:  URL(string: searchCellViewModel?.backdropPath ?? "" ), placeholder: UIImage(named: "PlaceholderIMage"), options: .none)
+            moviesTitleLab.text = searchCellViewModel?.originalTitle ?? ""
+            voteAverageLab.text =  "Vote Average: " +  "\(searchCellViewModel?.voteAverage ?? 0.0)"
         }
     }
     

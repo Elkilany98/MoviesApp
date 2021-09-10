@@ -18,12 +18,12 @@ class TopRatedViewModel {
     var reloadTableViewClosure : (()->())?
     var showAlertClosure : (()->())?
     var updateLoadingStatus : (()->())?
-    var tempList = [TopRatedCellViewModel]()
+    var tempList = [GeneralCellViewModel]()
 
     private var pageCount = 1
     private var isGetMoreMovies = false
     
-    private var cellViewModel : [TopRatedCellViewModel] = [TopRatedCellViewModel](){
+    private var cellViewModel : [GeneralCellViewModel] = [GeneralCellViewModel](){
         didSet{
             self.reloadTableViewClosure?()
         }
@@ -58,6 +58,12 @@ class TopRatedViewModel {
                     return
                 }
                 
+                if list.count == 0 || list.isEmpty == true {
+                    self.state = .isEmptyResult
+                    self.alertMessage = "There is no data"
+
+                }
+                
                 self.state = .isGetData
                 self.fetchTopRatedList(topRatedArr: list)
                 
@@ -72,7 +78,7 @@ class TopRatedViewModel {
         }
     }
     
-    func getCellViewModel(index : IndexPath)->TopRatedCellViewModel{
+    func getCellViewModel(index : IndexPath)->GeneralCellViewModel{
         return cellViewModel[index.row]
     }
     
@@ -84,9 +90,9 @@ class TopRatedViewModel {
         self.cellViewModel = tempList
     }
     
-    func createCellViewModelFunctionality(movie:GeneralList) -> TopRatedCellViewModel {
+    func createCellViewModelFunctionality(movie:GeneralList) -> GeneralCellViewModel {
         let urlPathImage = ("https://image.tmdb.org/t/p/w500" + (movie.backdropPath ?? "" ))
-            return TopRatedCellViewModel(id: movie.id ?? 0 , backdropPath: urlPathImage, originalTitle:movie.originalTitle ?? "" , voteAverage: movie.voteAverage ?? 0.0)
+            return GeneralCellViewModel(id: movie.id ?? 0 , backdropPath: urlPathImage, originalTitle:movie.originalTitle ?? "" , voteAverage: movie.voteAverage ?? 0.0)
     }
     
     func paginateTopRatedMoviesData(indexPaths:[IndexPath]){

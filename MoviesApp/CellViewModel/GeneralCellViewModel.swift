@@ -1,5 +1,5 @@
 //
-//  NowPlayingCellViewModel.swift
+//  GeneralCellViewModel.swift
 //  MoviesApp
 //
 //  Created by Mohamed Elkilany on 10/09/2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NowPlayingCellViewModel: Codable {
+struct GeneralCellViewModel: Codable {
     let id: Int?
     let backdropPath: String?
     let originalTitle: String?

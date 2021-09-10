@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Bold.ttf">
+            <string>Cairo-Bold</string>
+        </array>
+        <array key="Cairo-Light.ttf">
+            <string>Cairo-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="234" id="vdw-MS-wB6" customClass="SearchTableCell" customModule="MoviesApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="vdw-MS-wB6" id="jeh-DI-ueB">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nu2-ss-I2S" customClass="ShadowView" customModule="MoviesApp" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="304" height="200"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yizL4cEKsVvl17Wc1mGEIrQtM2F" translatesAutoresizingMaskIntoConstraints="NO" id="ey6-An-c7L">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="esY-Pt-auj"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="VeV-fY-oni">
+                                <rect key="frame" x="12" y="130" width="284" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shang-Chi and the Legend of the Ten Rings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ubj-Oe-vgR">
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="30"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                        <color key="textColor" name="182890"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="wRm-a8-m6R">
+                                        <rect key="frame" x="0.0" y="30" width="284" height="28"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WwK-Y9-45U">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="28"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIJ-ci-H6C">
+                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="28"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Light" family="Cairo" pointSize="12"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="KYD-FZ-dXt">
+                                                <rect key="frame" x="252" y="0.0" width="32" height="28"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyFav" translatesAutoresizingMaskIntoConstraints="NO" id="uqL-PV-OgQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="28"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28" id="As3-7b-gSy"/>
+                                                            <constraint firstAttribute="width" constant="32" id="N2r-zW-ukn"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ubj-Oe-vgR" secondAttribute="trailing" id="7s3-eK-KOA"/>
+                                    <constraint firstAttribute="trailing" secondItem="wRm-a8-m6R" secondAttribute="trailing" id="gfn-AB-Qcx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ey6-An-c7L" secondAttribute="trailing" id="8Ou-vw-Uee"/>
+                            <constraint firstItem="ey6-An-c7L" firstAttribute="top" secondItem="Nu2-ss-I2S" secondAttribute="top" id="Bco-oy-6wG"/>
+                            <constraint firstAttribute="bottom" secondItem="VeV-fY-oni" secondAttribute="bottom" constant="12" id="TRa-2o-VFk"/>
+                            <constraint firstAttribute="height" constant="200" id="VX6-LH-RNW"/>
+                            <constraint firstItem="VeV-fY-oni" firstAttribute="top" secondItem="ey6-An-c7L" secondAttribute="bottom" id="ZFZ-L9-s4n"/>
+                            <constraint firstItem="ey6-An-c7L" firstAttribute="leading" secondItem="Nu2-ss-I2S" secondAttribute="leading" id="vQj-mD-klj"/>
+                            <constraint firstItem="VeV-fY-oni" firstAttribute="leading" secondItem="Nu2-ss-I2S" secondAttribute="leading" constant="12" id="wWk-rq-U5P"/>
+                            <constraint firstAttribute="trailing" secondItem="VeV-fY-oni" secondAttribute="trailing" constant="8" id="xLu-GR-C2c"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Nu2-ss-I2S" firstAttribute="leading" secondItem="jeh-DI-ueB" secondAttribute="leading" constant="8" id="CCI-kV-Tmx"/>
+                    <constraint firstAttribute="trailing" secondItem="Nu2-ss-I2S" secondAttribute="trailing" constant="8" id="g9J-38-qfE"/>
+                    <constraint firstItem="Nu2-ss-I2S" firstAttribute="top" secondItem="jeh-DI-ueB" secondAttribute="top" constant="8" id="iSG-b4-Bzz"/>
+                    <constraint firstAttribute="bottom" secondItem="Nu2-ss-I2S" secondAttribute="bottom" constant="12" id="zlc-Lb-zgU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="BME-88-loa"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="containerView" destination="Nu2-ss-I2S" id="yQo-pM-Iis"/>
+                <outlet property="favouritImg" destination="uqL-PV-OgQ" id="uLk-tl-GAR"/>
+                <outlet property="moviesImg" destination="ey6-An-c7L" id="dAR-mL-K1z"/>
+                <outlet property="moviesTitleLab" destination="ubj-Oe-vgR" id="6DD-IN-Cpk"/>
+                <outlet property="voteAverageLab" destination="NIJ-ci-H6C" id="SWM-bA-wXA"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="204.24107142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="emptyFav" width="48" height="48"/>
+        <image name="yizL4cEKsVvl17Wc1mGEIrQtM2F" width="500" height="281"/>
+        <namedColor name="182890">
+            <color red="0.093999996781349182" green="0.15700000524520874" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

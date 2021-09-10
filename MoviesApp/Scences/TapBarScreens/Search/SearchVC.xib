@@ -11,16 +11,41 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchVC" customModule="MoviesApp" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view" destination="uTI-fY-8cF" id="Xzp-8F-TPG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="SearchView" customModule="MoviesApp" customModuleProvider="target">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="uTI-fY-8cF" customClass="SearchView" customModule="MoviesApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-X5-XQN">
+                    <rect key="frame" x="12" y="48" width="390" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2jO-wd-PMp">
+                    <rect key="frame" x="182" y="423" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="3lj-lw-i9L"/>
+                        <constraint firstAttribute="height" constant="50" id="Iw6-AV-wWW"/>
+                    </constraints>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="JyC-My-3Nn"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="139" y="141"/>
+            <constraints>
+                <constraint firstItem="qb4-X5-XQN" firstAttribute="top" secondItem="JyC-My-3Nn" secondAttribute="top" constant="4" id="MKe-O1-zSy"/>
+                <constraint firstItem="qb4-X5-XQN" firstAttribute="trailing" secondItem="JyC-My-3Nn" secondAttribute="trailing" constant="-12" id="MQl-hx-DRL"/>
+                <constraint firstItem="qb4-X5-XQN" firstAttribute="bottom" secondItem="JyC-My-3Nn" secondAttribute="bottom" constant="4" id="Vgc-lc-693"/>
+                <constraint firstItem="qb4-X5-XQN" firstAttribute="leading" secondItem="JyC-My-3Nn" secondAttribute="leading" constant="12" id="Vxy-oE-nwW"/>
+                <constraint firstItem="2jO-wd-PMp" firstAttribute="centerX" secondItem="uTI-fY-8cF" secondAttribute="centerX" id="dei-L1-pux"/>
+                <constraint firstItem="2jO-wd-PMp" firstAttribute="centerY" secondItem="uTI-fY-8cF" secondAttribute="centerY" id="fMY-Aq-PAI"/>
+            </constraints>
+            <connections>
+                <outlet property="progress" destination="2jO-wd-PMp" id="zud-oa-dqK"/>
+                <outlet property="searchTable" destination="qb4-X5-XQN" id="My4-Te-lfh"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="140.625"/>
         </view>
     </objects>
     <resources>

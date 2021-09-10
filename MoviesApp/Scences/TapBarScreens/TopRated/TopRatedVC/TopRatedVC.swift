@@ -52,7 +52,7 @@ class TopRatedVC: UIViewController {
         print("viewModel.state", viewModel.state)
         switch viewModel.state {
       
-        case .error , .isEmpty:
+        case .error , .isEmpty ,.isEmptyResult:
             mainView.progress.stopAnimating()
             DispatchQueue.main.async {
                 if let message = self.viewModel.alertMessage{
@@ -77,7 +77,10 @@ class TopRatedVC: UIViewController {
                     self.mainView.topRatedTable.isHidden = false
                 })
             }
+        case .isTypSearchText:
+            return
         }
+        
         
         viewModel.reloadTableViewClosure = { [weak self] in
             guard  let self = self  else {return}
