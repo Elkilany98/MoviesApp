@@ -7,6 +7,9 @@
 
 import UIKit
 import Kingfisher
+
+
+
 class NowPlayingTableCell: UITableViewCell {
 
     static let cellID = "NowPlayingTableCell"
@@ -15,8 +18,8 @@ class NowPlayingTableCell: UITableViewCell {
     @IBOutlet weak var moviesImg:UIImageView!
     @IBOutlet weak var moviesTitleLab:UILabel!
     @IBOutlet weak var voteAverageLab:UILabel!
-    @IBOutlet weak var favouritImg:UIImageView!
-
+    @IBOutlet weak var favBtn: UIButton!
+    
     var favoriteImageClosure : (()->())?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,8 +32,9 @@ class NowPlayingTableCell: UITableViewCell {
   
 
     func setUpCellView(){
-        favoriteAction()
-        favouritImg.image = UIImage(named: "emptyFav")
+        favBtn.layer.cornerRadius = 12
+        favBtn.layer.borderWidth = 1
+        favBtn.layer.borderColor = #colorLiteral(red: 0.09411764706, green: 0.1568627451, blue: 0.5647058824, alpha: 1)
         moviesImg.layer.cornerRadius = 22
         containerView.layer.cornerRadius = 22
         selectionStyle = .none
@@ -38,31 +42,19 @@ class NowPlayingTableCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        favouritImg.image = nil
             isHidden = false
             isSelected = false
             isHighlighted = false
     }
     
     
-    func favoriteAction(){
-        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(favoriteImageTapped))
-        favouritImg.isUserInteractionEnabled = true
-        favouritImg.addGestureRecognizer(tap)
+    @IBAction func favActionBtn(_ sender: Any) {
+                favoriteImageClosure?()
     }
     
-    @objc func favoriteImageTapped(){
-        if favouritImg.image == UIImage(named: "redFav"){
-            favouritImg.image =  UIImage(named: "emptyFav")
-        }else{
-            favouritImg.image =  UIImage(named: "redFav")
-        }
-        favoriteImageClosure?()
-    }
     
     var nowPlayingCellViewModel : GeneralCellViewModel?  {
         didSet{
-
             moviesImg.kf.indicatorType = .activity
             moviesImg.kf.setImage(with:  URL(string: nowPlayingCellViewModel?.backdropPath ?? "" ), placeholder: UIImage(named: "PlaceholderIMage"), options: .none)
             moviesTitleLab.text = nowPlayingCellViewModel?.originalTitle ?? ""

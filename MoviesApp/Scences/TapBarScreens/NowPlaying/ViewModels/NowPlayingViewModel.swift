@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RealmSwift
+
 class NowPlayingViewModel {
     
     let apiNetwork:NetworkManagerProtocol
@@ -21,6 +23,7 @@ class NowPlayingViewModel {
 
     private var pageCount = 1
     private var isGetMoreMovies = false
+    let realm = try! Realm()
     
     private var cellViewModel : [GeneralCellViewModel] = [GeneralCellViewModel](){
         didSet{
@@ -99,11 +102,19 @@ class NowPlayingViewModel {
                 break
             }
         }
-        
-        
     }
     
-    
+    func addToRealmDateBase(indexPath:IndexPath){
+        let favorite = FavoriteModel()
+        favorite.movieID = "\(cellViewModel[indexPath.row].id ?? 0)"
+        favorite.movieTitle = cellViewModel[indexPath.row].originalTitle ?? ""
+        favorite.movieVoteAverage = "\(cellViewModel[indexPath.row].voteAverage ?? 0.0)"
+        favorite.movieImage = cellViewModel[indexPath.row].backdropPath ?? ""
+        
+        realm.beginWrite()
+        realm.add(favorite)
+        try! realm.commitWrite()
+    }
     
     
 }

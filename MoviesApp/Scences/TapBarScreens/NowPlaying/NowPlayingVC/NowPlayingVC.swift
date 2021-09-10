@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NowPlayingVC: UIViewController {
     
     var mainView : NowPlayingView {
         return view as! NowPlayingView
     }
+
+    let realm = try! Realm()
     
     lazy var viewModel : NowPlayingViewModel = {
         return NowPlayingViewModel()
@@ -21,7 +24,7 @@ class NowPlayingVC: UIViewController {
         super.viewDidLoad()
         title = "Now Playing"
         navigationController?.navigationBar.prefersLargeTitles = true
-
+        print("Realm File" , Realm.Configuration.defaultConfiguration.fileURL!)
         tableViewConfigration()
         initNowPlayingViewModel()
     }
@@ -82,9 +85,6 @@ class NowPlayingVC: UIViewController {
             
         case .isTypSearchText:
             return
-            
-        
-            
         }
         
         
@@ -102,7 +102,6 @@ class NowPlayingVC: UIViewController {
 }
 
 extension NowPlayingVC : UITableViewDelegate , UITableViewDataSource , UITableViewDataSourcePrefetching {
-   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCellForRow
@@ -111,8 +110,13 @@ extension NowPlayingVC : UITableViewDelegate , UITableViewDataSource , UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NowPlayingTableCell.cellID, for: indexPath) as!
             NowPlayingTableCell
+        
         let cellViewModel = viewModel.getCellViewModel(index: indexPath)
         cell.nowPlayingCellViewModel = cellViewModel
+        cell.favoriteImageClosure = { [weak self] in
+            guard  let self = self  else {return}
+            self.viewModel.addToRealmDateBase(indexPath: indexPath)
+        }
         
         return cell
     }
@@ -123,7 +127,6 @@ extension NowPlayingVC : UITableViewDelegate , UITableViewDataSource , UITableVi
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         viewModel.paginateMoviesData(indexPaths: indexPaths)
-        
     }
     
 }
