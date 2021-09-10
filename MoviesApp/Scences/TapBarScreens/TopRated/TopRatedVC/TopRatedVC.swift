@@ -20,6 +20,7 @@ class TopRatedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Top Rated"
+        navigationController?.navigationBar.prefersLargeTitles = true
         tableViewConfigration()
         initTopRatedViewModel()
     }

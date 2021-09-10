@@ -20,6 +20,8 @@ class NowPlayingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Now Playing"
+        navigationController?.navigationBar.prefersLargeTitles = true
+
         tableViewConfigration()
         initNowPlayingViewModel()
     }
