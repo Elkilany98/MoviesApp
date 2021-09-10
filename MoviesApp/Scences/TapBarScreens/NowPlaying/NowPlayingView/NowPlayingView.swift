@@ -8,4 +8,5 @@
 import UIKit
 class NowPlayingView : UIView {
     @IBOutlet weak var nowPlayingTable: UITableView!
+    @IBOutlet weak var progress: UIActivityIndicatorView!
 }

@@ -10,25 +10,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Cairo-Regular.ttf">
-            <string>Cairo-Regular</string>
+        <array key="Cairo-Bold.ttf">
+            <string>Cairo-Bold</string>
         </array>
-        <array key="Cairo-SemiBold.ttf">
-            <string>Cairo-SemiBold</string>
+        <array key="Cairo-Light.ttf">
+            <string>Cairo-Light</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="261" id="KGk-i7-Jjw" customClass="NowPlayingTableCell" customModule="MoviesApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="234" id="KGk-i7-Jjw" customClass="NowPlayingTableCell" customModule="MoviesApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mle-iW-62D" customClass="ShadowView" customModule="MoviesApp" customModuleProvider="target">
-                        <rect key="frame" x="8" y="8" width="304" height="230"/>
+                        <rect key="frame" x="8" y="8" width="304" height="200"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yizL4cEKsVvl17Wc1mGEIrQtM2F" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-Kn-v15">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="130"/>
@@ -37,33 +37,45 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Uri-lA-Y3p">
-                                <rect key="frame" x="12" y="130" width="284" height="92"/>
+                                <rect key="frame" x="12" y="130" width="284" height="58"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shang-Chi and the Legend of the Ten Rings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="wSc-cU-IvJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="284" height="75.5"/>
-                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="30"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                         <color key="textColor" name="182890"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hnO-lm-cox">
-                                        <rect key="frame" x="0.0" y="75.5" width="184" height="16.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="pbK-jw-bev">
+                                        <rect key="frame" x="0.0" y="30" width="284" height="28"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote Average :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgf-uC-Vys">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="16.5"/>
-                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV8-Uy-59K">
-                                                <rect key="frame" x="93.5" y="0.0" width="90.5" height="16.5"/>
-                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hnO-lm-cox">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="28"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgf-uC-Vys">
+                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="28"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Light" family="Cairo" pointSize="12"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="wqe-rq-uE0">
+                                                <rect key="frame" x="252" y="0.0" width="32" height="28"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyFav" translatesAutoresizingMaskIntoConstraints="NO" id="Uc3-jD-gVd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="28"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28" id="32T-O3-PFv"/>
+                                                            <constraint firstAttribute="width" constant="32" id="V54-vl-3jF"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pbK-jw-bev" secondAttribute="trailing" id="9Eb-Z1-oEj"/>
                                     <constraint firstAttribute="trailing" secondItem="wSc-cU-IvJ" secondAttribute="trailing" id="iUh-iQ-OPg"/>
                                 </constraints>
                             </stackView>
@@ -73,34 +85,36 @@
                             <constraint firstItem="4a5-Kn-v15" firstAttribute="leading" secondItem="Mle-iW-62D" secondAttribute="leading" id="2Em-Bs-C0e"/>
                             <constraint firstAttribute="trailing" secondItem="4a5-Kn-v15" secondAttribute="trailing" id="9GY-36-9b1"/>
                             <constraint firstItem="Uri-lA-Y3p" firstAttribute="leading" secondItem="Mle-iW-62D" secondAttribute="leading" constant="12" id="E9m-cq-VH4"/>
+                            <constraint firstAttribute="bottom" secondItem="Uri-lA-Y3p" secondAttribute="bottom" constant="12" id="GPL-rg-nxN"/>
                             <constraint firstItem="4a5-Kn-v15" firstAttribute="top" secondItem="Mle-iW-62D" secondAttribute="top" id="Vnu-zm-utq"/>
-                            <constraint firstAttribute="height" constant="230" id="XSn-C6-7EX"/>
+                            <constraint firstAttribute="height" constant="200" id="XSn-C6-7EX"/>
                             <constraint firstItem="Uri-lA-Y3p" firstAttribute="top" secondItem="4a5-Kn-v15" secondAttribute="bottom" id="le4-DV-dOK"/>
-                            <constraint firstAttribute="bottom" secondItem="Uri-lA-Y3p" secondAttribute="bottom" constant="8" id="oeE-Db-fHl"/>
                             <constraint firstAttribute="trailing" secondItem="Uri-lA-Y3p" secondAttribute="trailing" constant="8" id="scI-MM-KqY"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Mle-iW-62D" secondAttribute="bottom" constant="12" id="8iI-WM-8Vy"/>
                     <constraint firstItem="Mle-iW-62D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JA8-fV-LvF"/>
                     <constraint firstItem="Mle-iW-62D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="bTL-GH-qwC"/>
                     <constraint firstAttribute="trailing" secondItem="Mle-iW-62D" secondAttribute="trailing" constant="8" id="fwd-Yn-MKl"/>
+                    <constraint firstAttribute="bottom" secondItem="Mle-iW-62D" secondAttribute="bottom" constant="12" id="uve-aN-479"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="containerView" destination="Mle-iW-62D" id="uG2-Bz-SYo"/>
+                <outlet property="favouritImg" destination="Uc3-jD-gVd" id="qJU-ZS-wQb"/>
                 <outlet property="moviesImg" destination="4a5-Kn-v15" id="yvU-fE-bMV"/>
                 <outlet property="moviesTitleLab" destination="wSc-cU-IvJ" id="xgN-KV-Bjg"/>
-                <outlet property="voteAverageLab" destination="iV8-Uy-59K" id="f6n-nl-r8T"/>
+                <outlet property="voteAverageLab" destination="Tgf-uC-Vys" id="tbp-sJ-PbG"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="213.28125"/>
+            <point key="canvasLocation" x="137.68115942028987" y="204.24107142857142"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="emptyFav" width="48" height="48"/>
         <image name="yizL4cEKsVvl17Wc1mGEIrQtM2F" width="500" height="281"/>
         <namedColor name="182890">
             <color red="0.093999996781349182" green="0.15700000524520874" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

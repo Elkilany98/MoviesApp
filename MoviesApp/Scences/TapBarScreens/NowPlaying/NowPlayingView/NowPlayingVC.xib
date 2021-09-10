@@ -23,17 +23,27 @@
                     <rect key="frame" x="12" y="48" width="390" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wIB-z4-hdE">
+                    <rect key="frame" x="182" y="423" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="X3W-JC-Zy5"/>
+                        <constraint firstAttribute="width" constant="50" id="fdF-2L-Odq"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="cSY-PW-g8l" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="0Oc-GO-DE7"/>
                 <constraint firstItem="cSY-PW-g8l" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-12" id="8WA-9G-eCW"/>
+                <constraint firstItem="wIB-z4-hdE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ft2-7U-vQj"/>
+                <constraint firstItem="wIB-z4-hdE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="QUL-7N-vb8"/>
                 <constraint firstItem="cSY-PW-g8l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="USr-2J-Re2"/>
                 <constraint firstItem="cSY-PW-g8l" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="4" id="bAq-mb-CdN"/>
             </constraints>
             <connections>
                 <outlet property="nowPlayingTable" destination="cSY-PW-g8l" id="jcB-Oz-wUb"/>
+                <outlet property="progress" destination="wIB-z4-hdE" id="wlm-Qj-RSX"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="140.625"/>
         </view>

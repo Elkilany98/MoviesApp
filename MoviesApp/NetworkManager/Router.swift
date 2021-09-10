@@ -10,13 +10,13 @@ import Alamofire
 
 enum Router: URLRequestConvertible {
     
-    case nowPlaying(page:String)
+    case nowPlayingMovies(page:String)
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
         
-        case .nowPlaying:
+        case .nowPlayingMovies:
             return .get
                 default:
             return .get
@@ -26,14 +26,14 @@ enum Router: URLRequestConvertible {
     // MARK: - Path
     private var path: String {
         switch self {
-        case .nowPlaying : return "now_playing"
+        case .nowPlayingMovies : return "now_playing"
         }
     }
     
     // MARK: - Parameters
     private var parameters: RequestParams? {
         switch self {
-         case let .nowPlaying(page):
+         case let .nowPlayingMovies(page):
             return.url([
                 "api_key":Constants.apiKey,
                 "language":Constants.languageKey,
