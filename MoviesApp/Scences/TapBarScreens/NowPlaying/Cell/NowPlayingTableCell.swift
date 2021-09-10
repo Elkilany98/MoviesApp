@@ -26,8 +26,8 @@ class NowPlayingTableCell: UITableViewCell {
     }
     
     func setUpCellView(){
-//        moviesImg.layer.cornerRadius = 22
-        containerView.layer.cornerRadius = 22
+        moviesImg.layer.cornerRadius = 20
+        containerView.layer.cornerRadius = 20
         selectionStyle = .none
     }
 
