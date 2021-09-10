@@ -10,7 +10,7 @@ import Alamofire
 struct Constants {
     
     struct ProductionServer {
-        static let baseURL = "https://api.themoviedb.org/3/movie/"
+        static let baseURL = "https://api.themoviedb.org/3/"
     }
     
     static let apiKey = "0d77ea0a9efc3d9d4a2d759ca0820201"
