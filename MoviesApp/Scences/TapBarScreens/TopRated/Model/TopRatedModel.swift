@@ -21,11 +21,12 @@ struct TopRatedModel: Codable {
 
 struct TopRatedList: Codable {
     let id: Int?
-    let originalTitle: String?
+    let originalTitle ,backdropPath: String?
     let voteAverage: Double?
 
     enum CodingKeys: String, CodingKey {
         case id
+        case backdropPath = "backdrop_path"
         case originalTitle = "original_title"
         case voteAverage = "vote_average"
   

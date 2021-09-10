@@ -8,5 +8,6 @@
 import UIKit
 
 class TopRatedView: UIView {
-    
+    @IBOutlet weak var topRatedTable: UITableView!
+    @IBOutlet weak var progress: UIActivityIndicatorView!
 }
