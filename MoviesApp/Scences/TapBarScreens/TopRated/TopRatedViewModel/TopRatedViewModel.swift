@@ -10,7 +10,7 @@ import Foundation
 class TopRatedViewModel {
     
     let apiNetwork:NetworkManagerProtocol
-    private var topRatedList : [TopRatedList] = [TopRatedList]()
+    private var topRatedList : [GeneralList] = [GeneralList]()
     init(apiNetwork : NetworkManagerProtocol = NetworkManager()) {
         self.apiNetwork = apiNetwork
     }
@@ -76,7 +76,7 @@ class TopRatedViewModel {
         return cellViewModel[index.row]
     }
     
-    private func fetchTopRatedList(topRatedArr :[TopRatedList]){
+    private func fetchTopRatedList(topRatedArr :[GeneralList]){
         self.topRatedList = topRatedArr
         for movie in topRatedArr {
             tempList.append(createCellViewModelFunctionality(movie: movie))
@@ -84,7 +84,7 @@ class TopRatedViewModel {
         self.cellViewModel = tempList
     }
     
-    func createCellViewModelFunctionality(movie:TopRatedList) -> TopRatedCellViewModel {
+    func createCellViewModelFunctionality(movie:GeneralList) -> TopRatedCellViewModel {
         let urlPathImage = ("https://image.tmdb.org/t/p/w500" + (movie.backdropPath ?? "" ))
             return TopRatedCellViewModel(id: movie.id ?? 0 , backdropPath: urlPathImage, originalTitle:movie.originalTitle ?? "" , voteAverage: movie.voteAverage ?? 0.0)
     }

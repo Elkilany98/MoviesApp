@@ -1,16 +1,17 @@
 //
-//  NowPlayingModel.swift
+//  GeneralResponse.swift
 //  MoviesApp
 //
-//  Created by Mohamed Elkilany on 09/09/2021.
+//  Created by Mohamed Elkilany on 10/09/2021.
 //
 
 import Foundation
 
-struct NowPlayingModel: Codable {
+
+struct GeneralModel: Codable {
     let page: Int?
     let statusMessage :String?
-    let results: [NowPlayingList]?
+    let results: [GeneralList]?
     let totalPages, totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -21,7 +22,7 @@ struct NowPlayingModel: Codable {
     }
 }
 
-struct NowPlayingList: Codable {
+struct GeneralList: Codable {
     let id: Int?
     let backdropPath: String?
     let originalTitle: String?

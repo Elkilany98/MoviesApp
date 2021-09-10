@@ -47,7 +47,6 @@ enum Router: URLRequestConvertible {
                 "page":page
             ])
             
-            
         case let .topRatedMovies(page):
             return.url([
                 "api_key":Constants.apiKey,

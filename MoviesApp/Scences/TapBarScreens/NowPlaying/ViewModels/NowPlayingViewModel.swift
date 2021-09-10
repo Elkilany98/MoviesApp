@@ -9,7 +9,7 @@ import Foundation
 class NowPlayingViewModel {
     
     let apiNetwork:NetworkManagerProtocol
-    private var nowPlayingList : [NowPlayingList] = [NowPlayingList]()
+    private var nowPlayingList : [GeneralList] = [GeneralList]()
     init(apiNetwork : NetworkManagerProtocol = NetworkManager()) {
         self.apiNetwork = apiNetwork
     }
@@ -75,7 +75,7 @@ class NowPlayingViewModel {
         return cellViewModel[index.row]
     }
     
-    private func fetchTheMoviesList(nowPlaying :[NowPlayingList]){
+    private func fetchTheMoviesList(nowPlaying :[GeneralList]){
         self.nowPlayingList = nowPlaying
         for movie in nowPlaying {
             tempList.append(createCellViewModelFunctionality(movie: movie))
@@ -83,7 +83,7 @@ class NowPlayingViewModel {
         self.cellViewModel = tempList
     }
     
-    func createCellViewModelFunctionality(movie:NowPlayingList) -> NowPlayingCellViewModel {
+    func createCellViewModelFunctionality(movie:GeneralList) -> NowPlayingCellViewModel {
         let urlPathImage = ("https://image.tmdb.org/t/p/w500" + (movie.backdropPath ?? "" ))
             return NowPlayingCellViewModel(id: movie.id ?? 0 , backdropPath: urlPathImage, originalTitle:movie.originalTitle ?? "" , voteAverage: movie.voteAverage ?? 0.0)
     }
