@@ -19,7 +19,6 @@
 		0AC3189126EAAC8D008E8CD3 /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC3188F26EAAC8D008E8CD3 /* SearchVC.xib */; };
 		0AC3189326EAAC9A008E8CD3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3189226EAAC9A008E8CD3 /* SearchView.swift */; };
 		0AC3189526EAACD1008E8CD3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3189426EAACD1008E8CD3 /* SearchViewModel.swift */; };
-		0AC3189726EAACE6008E8CD3 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3189626EAACE6008E8CD3 /* SearchModel.swift */; };
 		0AC3189E26EAADF4008E8CD3 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3189D26EAADF4008E8CD3 /* FavoriteModel.swift */; };
 		0AC318A026EAAE00008E8CD3 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3189F26EAAE00008E8CD3 /* FavoriteViewModel.swift */; };
 		0AC318A226EAAE26008E8CD3 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC318A126EAAE26008E8CD3 /* FavoriteView.swift */; };
@@ -67,7 +66,6 @@
 		0AC3188F26EAAC8D008E8CD3 /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
 		0AC3189226EAAC9A008E8CD3 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0AC3189426EAACD1008E8CD3 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		0AC3189626EAACE6008E8CD3 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		0AC3189D26EAADF4008E8CD3 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		0AC3189F26EAAE00008E8CD3 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		0AC318A126EAAE26008E8CD3 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 		0AC3188926EAAC51008E8CD3 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				0AC3188D26EAAC7C008E8CD3 /* SearchModel */,
 				0AC3188C26EAAC75008E8CD3 /* SearchViewModel */,
 				0AC3188B26EAAC62008E8CD3 /* SearchView */,
 				0AC3188A26EAAC58008E8CD3 /* SearchVC */,
@@ -226,14 +223,6 @@
 				0AC3189426EAACD1008E8CD3 /* SearchViewModel.swift */,
 			);
 			name = SearchViewModel;
-			sourceTree = "<group>";
-		};
-		0AC3188D26EAAC7C008E8CD3 /* SearchModel */ = {
-			isa = PBXGroup;
-			children = (
-				0AC3189626EAACE6008E8CD3 /* SearchModel.swift */,
-			);
-			name = SearchModel;
 			sourceTree = "<group>";
 		};
 		0AC3189826EAADC2008E8CD3 /* Favorite */ = {
@@ -588,7 +577,6 @@
 				0AC3189026EAAC8D008E8CD3 /* SearchVC.swift in Sources */,
 				0AF31CAB26EAA830008F6FD5 /* TopRatedVC.swift in Sources */,
 				0A9C598126EA3E4B00FAA618 /* AppDelegate.swift in Sources */,
-				0AC3189726EAACE6008E8CD3 /* SearchModel.swift in Sources */,
 				0AC3189326EAAC9A008E8CD3 /* SearchView.swift in Sources */,
 				0AC318AD26EABE19008E8CD3 /* Router.swift in Sources */,
 				0ADEE00026EA4F1C00F01BAC /* ViewController+Ext.swift in Sources */,
