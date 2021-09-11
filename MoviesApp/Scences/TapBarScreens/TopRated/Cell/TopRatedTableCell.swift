@@ -66,5 +66,4 @@ class TopRatedTableCell: UITableViewCell {
             voteAverageLab.text =  "Vote Average: " +  "\(topRatedCellViewModel?.voteAverage ?? 0.0)"
         }
     }
-    
 }

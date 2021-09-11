@@ -13,6 +13,8 @@
 		0A79603826EBE2EF000720BE /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79603626EBE2EF000720BE /* SearchTableCell.swift */; };
 		0A79603926EBE2EF000720BE /* SearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A79603726EBE2EF000720BE /* SearchTableCell.xib */; };
 		0A79603E26EBE384000720BE /* GeneralCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79603D26EBE384000720BE /* GeneralCellViewModel.swift */; };
+		0A79604226EC2373000720BE /* FavoriteTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79604026EC2373000720BE /* FavoriteTabelCell.swift */; };
+		0A79604326EC2373000720BE /* FavoriteTabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A79604126EC2373000720BE /* FavoriteTabelCell.xib */; };
 		0A9C598126EA3E4B00FAA618 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C598026EA3E4B00FAA618 /* AppDelegate.swift */; };
 		0A9C598A26EA3E4C00FAA618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9C598926EA3E4C00FAA618 /* Assets.xcassets */; };
 		0A9C598D26EA3E4C00FAA618 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9C598B26EA3E4C00FAA618 /* LaunchScreen.storyboard */; };
@@ -59,6 +61,8 @@
 		0A79603626EBE2EF000720BE /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
 		0A79603726EBE2EF000720BE /* SearchTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableCell.xib; sourceTree = "<group>"; };
 		0A79603D26EBE384000720BE /* GeneralCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCellViewModel.swift; sourceTree = "<group>"; };
+		0A79604026EC2373000720BE /* FavoriteTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTabelCell.swift; sourceTree = "<group>"; };
+		0A79604126EC2373000720BE /* FavoriteTabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTabelCell.xib; sourceTree = "<group>"; };
 		0A9C597D26EA3E4B00FAA618 /* MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9C598026EA3E4B00FAA618 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9C598926EA3E4C00FAA618 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 				0A79603D26EBE384000720BE /* GeneralCellViewModel.swift */,
 			);
 			path = CellViewModel;
+			sourceTree = "<group>";
+		};
+		0A79603F26EC235D000720BE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A79604026EC2373000720BE /* FavoriteTabelCell.swift */,
+				0A79604126EC2373000720BE /* FavoriteTabelCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		0A9C597426EA3E4B00FAA618 = {
@@ -249,6 +262,7 @@
 		0AC3189826EAADC2008E8CD3 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				0A79603F26EC235D000720BE /* Cell */,
 				0AC3189C26EAADE8008E8CD3 /* FavoriteModel */,
 				0AC3189B26EAADDC008E8CD3 /* FavoriteViewModel */,
 				0AC3189A26EAADD6008E8CD3 /* FavoriteView */,
@@ -261,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				0AC318A326EAAE34008E8CD3 /* FavoriteVC.swift */,
-				0AC318A426EAAE34008E8CD3 /* FavoriteVC.xib */,
 			);
 			path = FavoriteVC;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 		0AC3189A26EAADD6008E8CD3 /* FavoriteView */ = {
 			isa = PBXGroup;
 			children = (
+				0AC318A426EAAE34008E8CD3 /* FavoriteVC.xib */,
 				0AC318A126EAAE26008E8CD3 /* FavoriteView.swift */,
 			);
 			path = FavoriteView;
@@ -525,6 +539,7 @@
 				0A9C598D26EA3E4C00FAA618 /* LaunchScreen.storyboard in Resources */,
 				0AC318A626EAAE34008E8CD3 /* FavoriteVC.xib in Resources */,
 				0AC318B126EAC8BA008E8CD3 /* NowPlayingTableCell.xib in Resources */,
+				0A79604326EC2373000720BE /* FavoriteTabelCell.xib in Resources */,
 				0ADEE00626EA4FEA00F01BAC /* Cairo-Regular.ttf in Resources */,
 				0A9C598A26EA3E4C00FAA618 /* Assets.xcassets in Resources */,
 				0ADEE00926EA4FEA00F01BAC /* Cairo-Bold.ttf in Resources */,
@@ -580,6 +595,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A79604226EC2373000720BE /* FavoriteTabelCell.swift in Sources */,
 				0AC318AB26EABE07008E8CD3 /* NetworkManager.swift in Sources */,
 				0AF31C9E26EA9F1B008F6FD5 /* NowPlayingViewModel.swift in Sources */,
 				0AC3189526EAACD1008E8CD3 /* SearchViewModel.swift in Sources */,

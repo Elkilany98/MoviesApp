@@ -7,5 +7,6 @@
 
 import UIKit
 class FavoriteView:UIView {
-    
+    @IBOutlet weak var favoriteTable: UITableView!
+    @IBOutlet weak var noDataLab: UILabel!
 }

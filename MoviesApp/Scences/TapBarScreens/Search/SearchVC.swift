@@ -124,7 +124,6 @@ extension SearchVC : UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         if let text = searchController.searchBar.text , !text.isEmpty   {
             print("the text is ", text)
-            
            // MARK: URI encoded
             let encodedTextValue = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
             viewModel.getMoviesBasedOnTextSearch(encodedTextValue)

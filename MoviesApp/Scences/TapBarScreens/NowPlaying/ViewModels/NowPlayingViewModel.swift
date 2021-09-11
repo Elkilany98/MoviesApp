@@ -23,7 +23,7 @@ class NowPlayingViewModel {
 
     private var pageCount = 1
     private var isGetMoreMovies = false
-    let realm = try! Realm()
+    private let realm = try! Realm()
     
     private var cellViewModel : [GeneralCellViewModel] = [GeneralCellViewModel](){
         didSet{
