@@ -38,7 +38,6 @@ class NowPlayingVC: UIViewController {
     }
     
     func initNowPlayingViewModel(){
-        
         viewModel.showAlertClosure = { [weak self] in
             guard  let self = self  else {return}
             DispatchQueue.main.async {
@@ -113,7 +112,6 @@ class NowPlayingVC: UIViewController {
         viewModel.getMoviesList()
         
     }
-    
 }
 
 extension NowPlayingVC : UITableViewDelegate , UITableViewDataSource , UITableViewDataSourcePrefetching {
@@ -145,9 +143,9 @@ extension NowPlayingVC : UITableViewDelegate , UITableViewDataSource , UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectedMovies = viewModel.gotoMoviesDetails(indexPath: indexPath)
+    let selectedMovieID = viewModel.gotoMoviesDetails(indexPath: indexPath)
         let vc = MoviesDetailsVC()
-        vc.id = "\(selectedMovies.id ?? 0 )"
+        vc.moviesID = selectedMovieID
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

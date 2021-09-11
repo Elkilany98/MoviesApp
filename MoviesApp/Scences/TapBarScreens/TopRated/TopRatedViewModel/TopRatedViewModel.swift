@@ -25,7 +25,7 @@ class TopRatedViewModel {
     private var pageCount = 1
     private var isGetMoreMovies = false
     
-    private var cellViewModel : [GeneralCellViewModel] = [GeneralCellViewModel](){
+    fileprivate var cellViewModel : [GeneralCellViewModel] = [GeneralCellViewModel](){
         didSet{
             self.reloadTableViewClosure?()
         }
@@ -131,9 +131,9 @@ class TopRatedViewModel {
         self.alertMessage = "The movie has been added to favourites"
     }
     
-    func gotoMoviesDetails(indexPath : IndexPath)-> GeneralList {
-        let moviesDetails = topRatedList[indexPath.row]
-        return moviesDetails
+    func gotoMoviesDetails(indexPath : IndexPath)-> String {
+        let moviesDetails = cellViewModel[indexPath.row]
+        return "\(moviesDetails.id ?? 0 )"
     }
     
     

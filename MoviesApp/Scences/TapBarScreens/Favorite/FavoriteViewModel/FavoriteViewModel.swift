@@ -44,15 +44,13 @@ class FavoriteViewModel {
             self.realm.delete(movies)
             try! self.realm.commitWrite()
            reloadTableViewClosure?()
-        
-//        self.state = .intervalError
-//        self.alertMessage = "The movie has been Deleted From favourites"
+
         }
     
     
-    func gotoMoviesDetails(indexPath : IndexPath)-> FavoriteModel {
+    func gotoMoviesDetails(indexPath : IndexPath)-> String {
         let moviesDetails = favoriteArr[indexPath.row]
-        return moviesDetails
+        return moviesDetails.movieID
     }
     
 }

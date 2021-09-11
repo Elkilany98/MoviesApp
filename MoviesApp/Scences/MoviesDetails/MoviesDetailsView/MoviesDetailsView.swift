@@ -9,6 +9,7 @@ import UIKit
 
 class MoviesDetailsView: UIView {
     
+    @IBOutlet weak var progress: UIActivityIndicatorView!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var moviesImg: UIImageView!

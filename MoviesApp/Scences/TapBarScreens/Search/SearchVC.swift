@@ -178,9 +178,9 @@ extension SearchVC : UITableViewDelegate , UITableViewDataSource , UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectedMovies = viewModel.gotoMoviesDetails(indexPath: indexPath)
+    let selectedMovieID = viewModel.gotoMoviesDetails(indexPath: indexPath)
         let vc = MoviesDetailsVC()
-        vc.id = "\(selectedMovies.id ?? 0 )"
+        vc.moviesID = selectedMovieID
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

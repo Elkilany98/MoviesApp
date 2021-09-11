@@ -25,7 +25,7 @@ class NowPlayingViewModel {
     private var isGetMoreMovies = false
     private let realm = try! Realm()
     
-    private var cellViewModel : [GeneralCellViewModel] = [GeneralCellViewModel](){
+    fileprivate var cellViewModel : [GeneralCellViewModel] = [GeneralCellViewModel](){
         didSet{
             self.reloadTableViewClosure?()
         }
@@ -36,7 +36,6 @@ class NowPlayingViewModel {
             self.updateLoadingStatus?()
         }
     }
-    
     
     var alertMessage:String? {
         didSet{
@@ -129,9 +128,10 @@ class NowPlayingViewModel {
         try! realm.commitWrite()
     }
     
-    func gotoMoviesDetails(indexPath : IndexPath)-> GeneralList {
-        let moviesDetails = nowPlayingList[indexPath.row]
-        return moviesDetails
+    func gotoMoviesDetails(indexPath : IndexPath)-> String {
+        let moviesDetails = cellViewModel[indexPath.row]
+        return "\(moviesDetails.id ?? 0 )"
+//            moviesDetails
     }
     
 }

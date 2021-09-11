@@ -9,11 +9,11 @@ import Foundation
 import Alamofire
 
 enum Router: URLRequestConvertible {
-    
+
     case nowPlayingMovies(page:String)
     case topRatedMovies(page:String)
     case searchMovie(page:String,searchText:String)
-    
+    case moviesDetails(moviesID:String)
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
@@ -33,6 +33,7 @@ enum Router: URLRequestConvertible {
         case .nowPlayingMovies : return "movie/now_playing"
         case .topRatedMovies:return "movie/top_rated"
         case .searchMovie :return "search/movie"
+        case .moviesDetails(let moviesID): return "movie/\(moviesID)"
         }
     }
     
@@ -61,6 +62,15 @@ enum Router: URLRequestConvertible {
             "page":page,
             "query":searchText
         ])
+        case .moviesDetails(_):
+            return.url([
+                "api_key":Constants.apiKey,
+                "language":Constants.languageKey,
+            ])
+               
+            
+            
+            
     }
     
 }
@@ -71,7 +81,6 @@ func asURLRequest() throws -> URLRequest {
     
     let url = try Constants.ProductionServer.baseURL.asURL()
     var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-    //        encoding: JSONEncoding.default
     
     // HTTTP Method
     urlRequest.httpMethod = method.rawValue
