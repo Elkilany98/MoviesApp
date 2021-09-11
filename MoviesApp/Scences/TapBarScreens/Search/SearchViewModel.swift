@@ -127,6 +127,8 @@ class SearchViewModel {
         realm.beginWrite()
         realm.add(favorite)
         try! realm.commitWrite()
+        self.state = .intervalError
+        self.alertMessage = "The movie has been added to favourites"
     }
     
     

@@ -31,18 +31,31 @@ class TopRatedVC: UIViewController {
         mainView.topRatedTable.delegate = self
         mainView.topRatedTable.dataSource = self
         mainView.topRatedTable.separatorStyle = .none
-        mainView.topRatedTable.showsVerticalScrollIndicator = false
         mainView.topRatedTable.prefetchDataSource = self
         mainView.topRatedTable.register(TopRatedTableCell.nib(), forCellReuseIdentifier: TopRatedTableCell.cellID)
     }
     
     func initTopRatedViewModel(){
         
+        
         viewModel.showAlertClosure = { [weak self] in
             guard  let self = self  else {return}
             DispatchQueue.main.async {
                 if let message = self.viewModel.alertMessage{
-                    self.showAlert(message)
+                    switch self.viewModel.state {
+                    case  .error , .isEmpty, .isEmptyResult:
+                        if let message = self.viewModel.alertMessage{
+                            self.showAlert(message)
+                        }
+                    case .intervalError:
+                        self.intervalAlert(message: message)
+                    case .isLoading:
+                        return
+                    case .isGetData:
+                        return
+                    case .isTypSearchText:
+                        return
+                    }
                 }
             }
         }
@@ -81,6 +94,8 @@ class TopRatedVC: UIViewController {
             }
         case .isTypSearchText:
             return
+        case .intervalError:
+          return
         }
         
         

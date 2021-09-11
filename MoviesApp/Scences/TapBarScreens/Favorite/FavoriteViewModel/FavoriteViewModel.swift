@@ -44,5 +44,8 @@ class FavoriteViewModel {
             self.realm.delete(movies)
             try! self.realm.commitWrite()
            reloadTableViewClosure?()
+        
+//        self.state = .intervalError
+//        self.alertMessage = "The movie has been Deleted From favourites"
         }
 }

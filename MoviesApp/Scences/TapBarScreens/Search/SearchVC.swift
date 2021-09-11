@@ -53,18 +53,31 @@ let searchController = UISearchController()
         mainView.searchTable.delegate = self
         mainView.searchTable.dataSource = self
         mainView.searchTable.separatorStyle = .none
-        mainView.searchTable.showsVerticalScrollIndicator = false
         mainView.searchTable.prefetchDataSource = self
         mainView.searchTable.register(SearchTableCell.nib(), forCellReuseIdentifier: SearchTableCell.cellID)
     }
         
     
     func initSearchViewModel(){
+        
         viewModel.showAlertClosure = { [weak self] in
             guard  let self = self  else {return}
             DispatchQueue.main.async {
                 if let message = self.viewModel.alertMessage{
-                    self.showAlert(message)
+                    switch self.viewModel.state {
+                    case  .error , .isEmpty, .isEmptyResult:
+                        if let message = self.viewModel.alertMessage{
+                            self.showAlert(message)
+                        }
+                    case .intervalError:
+                        self.intervalAlert(message: message)
+                    case .isLoading:
+                        return
+                    case .isGetData:
+                        return
+                    case .isTypSearchText:
+                        return
+                    }
                 }
             }
         }
@@ -107,6 +120,8 @@ let searchController = UISearchController()
             DispatchQueue.main.async {
                 self.mainView.searchTable.reloadData()
             }
+        case .intervalError:
+           return
         }
         
         viewModel.reloadTableViewClosure = { [weak self] in

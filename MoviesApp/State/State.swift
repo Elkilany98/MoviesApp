@@ -14,4 +14,5 @@ public enum State {
     case isEmpty
     case isTypSearchText
     case isEmptyResult
+    case intervalError
 }

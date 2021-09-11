@@ -33,7 +33,6 @@ class NowPlayingVC: UIViewController {
         mainView.nowPlayingTable.delegate = self
         mainView.nowPlayingTable.dataSource = self
         mainView.nowPlayingTable.separatorStyle = .none
-        mainView.nowPlayingTable.showsVerticalScrollIndicator = false
         mainView.nowPlayingTable.prefetchDataSource = self
         mainView.nowPlayingTable.register(NowPlayingTableCell.nib(), forCellReuseIdentifier: NowPlayingTableCell.cellID)
     }
@@ -44,7 +43,20 @@ class NowPlayingVC: UIViewController {
             guard  let self = self  else {return}
             DispatchQueue.main.async {
                 if let message = self.viewModel.alertMessage{
-                    self.showAlert(message)
+                    switch self.viewModel.state {
+                    case  .error , .isEmpty, .isEmptyResult:
+                        if let message = self.viewModel.alertMessage{
+                            self.showAlert(message)
+                        }
+                    case .intervalError:
+                        self.intervalAlert(message: message)
+                    case .isLoading:
+                        return
+                    case .isGetData:
+                        return
+                    case .isTypSearchText:
+                        return
+                    }
                 }
             }
         }
@@ -84,6 +96,9 @@ class NowPlayingVC: UIViewController {
             }
             
         case .isTypSearchText:
+            return
+            
+        case .intervalError:
             return
         }
         

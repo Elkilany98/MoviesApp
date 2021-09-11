@@ -121,10 +121,14 @@ class NowPlayingViewModel {
         favorite.movieTitle = cellViewModel[indexPath.row].originalTitle ?? ""
         favorite.movieVoteAverage = "\(cellViewModel[indexPath.row].voteAverage ?? 0.0)"
         favorite.movieImage = cellViewModel[indexPath.row].backdropPath ?? ""
-        
+        self.state = .intervalError
+        self.alertMessage = "The movie has been added to favourites"
+
         realm.beginWrite()
         realm.add(favorite)
         try! realm.commitWrite()
+        
+      
     }
     
     

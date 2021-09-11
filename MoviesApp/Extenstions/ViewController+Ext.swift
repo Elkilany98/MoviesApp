@@ -49,5 +49,12 @@ func scrollToTop() {
         self.present(alert, animated: true, completion: nil)
     }
 
-    
+    func intervalAlert( message:String ){
+        let alert = UIAlertController(title: "", message:message  , preferredStyle: .alert)
+           self.present(alert, animated: true, completion: nil)
+           let when = DispatchTime.now() + 2
+           DispatchQueue.main.asyncAfter(deadline: when){
+               alert.dismiss(animated: true, completion: nil)
+           }
+       }
 }
