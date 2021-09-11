@@ -10,5 +10,13 @@ import Foundation
 class MoviesDetailsViewModel {
     
     
+    var updateLoadingStatus : (()->())?
+
+    var state : State = .isEmpty {
+        didSet{
+            self.updateLoadingStatus?()
+        }
+    }
+    
     
 }

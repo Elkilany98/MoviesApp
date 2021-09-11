@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         window = UIWindow(frame: UIScreen.main.bounds)
         let splashVC = SplashVC()
+//            SplashVC()
         window?.rootViewController = splashVC
         window?.makeKeyAndVisible()
         

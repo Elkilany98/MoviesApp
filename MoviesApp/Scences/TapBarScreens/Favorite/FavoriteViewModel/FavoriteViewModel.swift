@@ -48,4 +48,11 @@ class FavoriteViewModel {
 //        self.state = .intervalError
 //        self.alertMessage = "The movie has been Deleted From favourites"
         }
+    
+    
+    func gotoMoviesDetails(indexPath : IndexPath)-> FavoriteModel {
+        let moviesDetails = favoriteArr[indexPath.row]
+        return moviesDetails
+    }
+    
 }

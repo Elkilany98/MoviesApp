@@ -175,7 +175,13 @@ extension SearchVC : UITableViewDelegate , UITableViewDataSource , UITableViewDa
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         viewModel.paginateTopRatedMoviesData(indexPaths: indexPaths)
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedMovies = viewModel.gotoMoviesDetails(indexPath: indexPath)
+        let vc = MoviesDetailsVC()
+        vc.id = "\(selectedMovies.id ?? 0 )"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

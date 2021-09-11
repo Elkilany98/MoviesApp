@@ -131,6 +131,9 @@ class SearchViewModel {
         self.alertMessage = "The movie has been added to favourites"
     }
     
-    
+    func gotoMoviesDetails(indexPath : IndexPath)-> GeneralList {
+        let moviesDetails = searchList[indexPath.row]
+        return moviesDetails
+    }
 }
 

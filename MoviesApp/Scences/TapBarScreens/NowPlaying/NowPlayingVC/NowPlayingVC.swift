@@ -13,7 +13,7 @@ class NowPlayingVC: UIViewController {
     var mainView : NowPlayingView {
         return view as! NowPlayingView
     }
-
+    
     let realm = try! Realm()
     
     lazy var viewModel : NowPlayingViewModel = {
@@ -64,11 +64,11 @@ class NowPlayingVC: UIViewController {
         viewModel.updateLoadingStatus = { [weak self] () in
             guard  self != nil  else {return}
         }
-    
-
+        
+        
         print("viewModel.state", viewModel.state)
         switch viewModel.state {
-      
+        
         case .error , .isEmpty, .isEmptyResult:
             mainView.progress.stopAnimating()
             DispatchQueue.main.async {
@@ -109,7 +109,7 @@ class NowPlayingVC: UIViewController {
                 self.mainView.nowPlayingTable.reloadData()
             }
         }
-    
+        
         viewModel.getMoviesList()
         
     }
@@ -144,4 +144,12 @@ extension NowPlayingVC : UITableViewDelegate , UITableViewDataSource , UITableVi
         viewModel.paginateMoviesData(indexPaths: indexPaths)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedMovies = viewModel.gotoMoviesDetails(indexPath: indexPath)
+        let vc = MoviesDetailsVC()
+        vc.id = "\(selectedMovies.id ?? 0 )"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
+

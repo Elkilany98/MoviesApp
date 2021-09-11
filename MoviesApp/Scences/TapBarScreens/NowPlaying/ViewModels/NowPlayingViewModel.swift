@@ -20,7 +20,7 @@ class NowPlayingViewModel {
     var showAlertClosure : (()->())?
     var updateLoadingStatus : (()->())?
     var tempList = [GeneralCellViewModel]()
-
+ 
     private var pageCount = 1
     private var isGetMoreMovies = false
     private let realm = try! Realm()
@@ -92,7 +92,7 @@ class NowPlayingViewModel {
     
     func createCellViewModelFunctionality(movie:GeneralList) -> GeneralCellViewModel {
         let urlPathImage = ("https://image.tmdb.org/t/p/w500" + (movie.backdropPath ?? "" ))
-            return GeneralCellViewModel(id: movie.id ?? 0 , backdropPath: urlPathImage, originalTitle:movie.originalTitle ?? "" , voteAverage: movie.voteAverage ?? 0.0)
+        return GeneralCellViewModel(id: movie.id ?? 0 , backdropPath: urlPathImage, originalTitle:movie.originalTitle ?? "" , voteAverage: movie.voteAverage ?? 0.0)
     }
     
     func paginateMoviesData(indexPaths:[IndexPath]){
@@ -123,13 +123,15 @@ class NowPlayingViewModel {
         favorite.movieImage = cellViewModel[indexPath.row].backdropPath ?? ""
         self.state = .intervalError
         self.alertMessage = "The movie has been added to favourites"
-
+        
         realm.beginWrite()
         realm.add(favorite)
         try! realm.commitWrite()
-        
-      
     }
     
+    func gotoMoviesDetails(indexPath : IndexPath)-> GeneralList {
+        let moviesDetails = nowPlayingList[indexPath.row]
+        return moviesDetails
+    }
     
 }

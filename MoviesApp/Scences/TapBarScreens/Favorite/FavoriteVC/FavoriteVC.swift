@@ -96,5 +96,11 @@ extension FavoriteVC : UITableViewDelegate , UITableViewDataSource  {
         return 230
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedMovies = viewModel.gotoMoviesDetails(indexPath: indexPath)
+        let vc = MoviesDetailsVC()
+        vc.id = selectedMovies.movieID
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

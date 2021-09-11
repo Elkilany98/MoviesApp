@@ -131,4 +131,10 @@ class TopRatedViewModel {
         self.alertMessage = "The movie has been added to favourites"
     }
     
+    func gotoMoviesDetails(indexPath : IndexPath)-> GeneralList {
+        let moviesDetails = topRatedList[indexPath.row]
+        return moviesDetails
+    }
+    
+    
 }
