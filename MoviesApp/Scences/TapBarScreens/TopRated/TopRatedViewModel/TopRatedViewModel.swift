@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class TopRatedViewModel {
     
@@ -15,6 +16,7 @@ class TopRatedViewModel {
         self.apiNetwork = apiNetwork
     }
     
+    private let realm = try! Realm()
     var reloadTableViewClosure : (()->())?
     var showAlertClosure : (()->())?
     var updateLoadingStatus : (()->())?
@@ -102,6 +104,29 @@ class TopRatedViewModel {
                 break
             }
         }
+    }
+    
+   
+    func addToRealmDateBase(indexPath:IndexPath){
+        let favorite = FavoriteModel()
+        
+        let moviesIDs   = Array(realm.objects(FavoriteModel.self)).map{$0.movieID}
+        let ifMoviesIDExist =  moviesIDs.contains("\(cellViewModel[indexPath.row].id ?? 0)")
+        if ifMoviesIDExist == true  {
+            print("this Movies is Exist")
+            self.state = .error
+            self.alertMessage = "This Movie Already Existed on Favorite list"
+            return
+        }
+        
+        favorite.movieID = "\(cellViewModel[indexPath.row].id ?? 0)"
+        favorite.movieTitle = cellViewModel[indexPath.row].originalTitle ?? ""
+        favorite.movieVoteAverage = "\(cellViewModel[indexPath.row].voteAverage ?? 0.0)"
+        favorite.movieImage = cellViewModel[indexPath.row].backdropPath ?? ""
+        
+        realm.beginWrite()
+        realm.add(favorite)
+        try! realm.commitWrite()
     }
     
 }

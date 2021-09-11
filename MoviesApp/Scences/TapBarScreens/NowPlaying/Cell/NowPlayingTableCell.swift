@@ -18,9 +18,9 @@ class NowPlayingTableCell: UITableViewCell {
     @IBOutlet weak var moviesImg:UIImageView!
     @IBOutlet weak var moviesTitleLab:UILabel!
     @IBOutlet weak var voteAverageLab:UILabel!
-    @IBOutlet weak var favBtn: UIButton!
+    @IBOutlet weak var favouritBtn: UIButton!
     
-    var favoriteImageClosure : (()->())?
+    var favoriteClosure : (()->())?
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCellView()
@@ -32,9 +32,9 @@ class NowPlayingTableCell: UITableViewCell {
   
 
     func setUpCellView(){
-        favBtn.layer.cornerRadius = 12
-        favBtn.layer.borderWidth = 1
-        favBtn.layer.borderColor = #colorLiteral(red: 0.09411764706, green: 0.1568627451, blue: 0.5647058824, alpha: 1)
+        favouritBtn.layer.cornerRadius = 12
+        favouritBtn.layer.borderWidth = 1
+        favouritBtn.layer.borderColor = #colorLiteral(red: 0.09411764706, green: 0.1568627451, blue: 0.5647058824, alpha: 1)
         moviesImg.layer.cornerRadius = 22
         containerView.layer.cornerRadius = 22
         selectionStyle = .none
@@ -49,7 +49,7 @@ class NowPlayingTableCell: UITableViewCell {
     
     
     @IBAction func favActionBtn(_ sender: Any) {
-                favoriteImageClosure?()
+        favoriteClosure?()
     }
     
     

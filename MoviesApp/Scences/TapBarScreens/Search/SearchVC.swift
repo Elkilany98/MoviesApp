@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SearchVC: UIViewController {
     
@@ -15,6 +16,7 @@ let searchController = UISearchController()
         return view as! SearchView
     }
     
+    let realm = try! Realm()
     lazy var viewModel : SearchViewModel = {
         return SearchViewModel()
     }()
@@ -145,6 +147,10 @@ extension SearchVC : UITableViewDelegate , UITableViewDataSource , UITableViewDa
             SearchTableCell
         let cellViewModel = viewModel.getCellViewModel(index: indexPath)
         cell.searchCellViewModel = cellViewModel
+        cell.favoriteClosure = { [weak self] in
+            guard  let self = self  else {return}
+            self.viewModel.addToRealmDateBase(indexPath: indexPath)
+        }
         return cell
     }
     

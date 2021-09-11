@@ -68,6 +68,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kws-B5-LbP">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="22"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="7MJ-VV-K41"/>
                                                             <constraint firstAttribute="height" constant="22" id="brH-OV-rXL"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="12"/>
@@ -75,13 +76,10 @@
                                                             <color key="titleColor" name="182890"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="favActionBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Jgb-7g-jmo"/>
+                                                            <action selector="favActionBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mR4-GB-5cS"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="sw0-nr-I3Z"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
@@ -117,7 +115,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="containerView" destination="Mle-iW-62D" id="uG2-Bz-SYo"/>
-                <outlet property="favBtn" destination="Kws-B5-LbP" id="8fp-ZN-fvE"/>
+                <outlet property="favouritBtn" destination="Kws-B5-LbP" id="8Rw-Bu-jhR"/>
                 <outlet property="moviesImg" destination="4a5-Kn-v15" id="yvU-fE-bMV"/>
                 <outlet property="moviesTitleLab" destination="wSc-cU-IvJ" id="xgN-KV-Bjg"/>
                 <outlet property="voteAverageLab" destination="Tgf-uC-Vys" id="tbp-sJ-PbG"/>

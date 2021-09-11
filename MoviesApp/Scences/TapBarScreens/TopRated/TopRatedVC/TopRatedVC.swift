@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TopRatedVC: UIViewController {
     
     var mainView : TopRatedView {
         return view as! TopRatedView
     }
-    
+    let realm = try! Realm()
+
     lazy var viewModel : TopRatedViewModel = {
         return TopRatedViewModel()
     }()
@@ -104,6 +106,10 @@ extension TopRatedVC : UITableViewDelegate , UITableViewDataSource , UITableView
             TopRatedTableCell
         let cellViewModel = viewModel.getCellViewModel(index: indexPath)
         cell.topRatedCellViewModel = cellViewModel
+        cell.favoriteClosure = { [weak self] in
+            guard  let self = self  else {return}
+            self.viewModel.addToRealmDateBase(indexPath: indexPath)
+        }
         return cell
     }
     

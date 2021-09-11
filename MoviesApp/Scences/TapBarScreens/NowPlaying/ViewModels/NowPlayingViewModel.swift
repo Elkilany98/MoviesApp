@@ -104,8 +104,19 @@ class NowPlayingViewModel {
         }
     }
     
+    
     func addToRealmDateBase(indexPath:IndexPath){
         let favorite = FavoriteModel()
+        
+        let moviesIDs   = Array(realm.objects(FavoriteModel.self)).map{$0.movieID}
+        let ifMoviesIDExist =  moviesIDs.contains("\(cellViewModel[indexPath.row].id ?? 0)")
+        if ifMoviesIDExist == true  {
+            print("this Movies is Exist")
+            self.state = .error
+            self.alertMessage = "This Movie Already Existed on Favorite list"
+            return
+        }
+        
         favorite.movieID = "\(cellViewModel[indexPath.row].id ?? 0)"
         favorite.movieTitle = cellViewModel[indexPath.row].originalTitle ?? ""
         favorite.movieVoteAverage = "\(cellViewModel[indexPath.row].voteAverage ?? 0.0)"

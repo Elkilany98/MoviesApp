@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RealmSwift
+
 class SearchViewModel {
     
     let apiNetwork:NetworkManagerProtocol
@@ -13,7 +15,7 @@ class SearchViewModel {
     init(apiNetwork : NetworkManagerProtocol = NetworkManager()) {
         self.apiNetwork = apiNetwork
     }
-    
+    private let realm = try! Realm()
     var reloadTableViewClosure : (()->())?
     var showAlertClosure : (()->())?
     var updateLoadingStatus : (()->())?
@@ -54,16 +56,8 @@ class SearchViewModel {
             switch response {
             case .success(let value):
                 print("Current Page Number", self.pageCount)
-                guard let list = value.results else {
-                    return
-                }
-                
-                if list.count == 0 || list.isEmpty == true {
-                    self.state = .isEmptyResult
-                    self.alertMessage = "There is no data"
-                            break
-                }
-                
+                guard let list = value.results else {return}
+
                 self.state = .isGetData
                 self.fetchsearchList(topRatedArr: list)
                 
@@ -111,5 +105,30 @@ class SearchViewModel {
         self.searchText = searchText
         getSearchList(searchText: searchText)
     }
+    
+    
+    func addToRealmDateBase(indexPath:IndexPath){
+        let favorite = FavoriteModel()
+        let moviesIDs   = Array(realm.objects(FavoriteModel.self)).map{$0.movieID}
+        let ifMoviesIDExist =  moviesIDs.contains("\(cellViewModel[indexPath.row].id ?? 0)")
+        if ifMoviesIDExist == true  {
+            print("this Movies is Exist")
+            self.state = .error
+            self.alertMessage = "This Movie Already Existed on Favorite list"
+            return
+        }
+        
+        
+        favorite.movieID = "\(cellViewModel[indexPath.row].id ?? 0)"
+        favorite.movieTitle = cellViewModel[indexPath.row].originalTitle ?? ""
+        favorite.movieVoteAverage = "\(cellViewModel[indexPath.row].voteAverage ?? 0.0)"
+        favorite.movieImage = cellViewModel[indexPath.row].backdropPath ?? ""
+        
+        realm.beginWrite()
+        realm.add(favorite)
+        try! realm.commitWrite()
+    }
+    
+    
 }
 

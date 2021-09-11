@@ -16,9 +16,11 @@ class SearchTableCell: UITableViewCell {
     @IBOutlet weak var moviesImg:UIImageView!
     @IBOutlet weak var moviesTitleLab:UILabel!
     @IBOutlet weak var voteAverageLab:UILabel!
-    @IBOutlet weak var favouritImg:UIImageView!
+    @IBOutlet weak var favouritBtn:UIButton!
 
-    var favoriteImageClosure : (()->())?
+    var favoriteClosure : (()->())?
+  
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCellView()
@@ -29,8 +31,10 @@ class SearchTableCell: UITableViewCell {
     }
 
     func setUpCellView(){
-        favoriteAction()
-        favouritImg.image = UIImage(named: "emptyFav")
+        favouritBtn.layer.cornerRadius = 12
+        favouritBtn.layer.borderWidth = 1
+        favouritBtn.layer.borderColor = #colorLiteral(red: 0.09411764706, green: 0.1568627451, blue: 0.5647058824, alpha: 1)
+       
         moviesImg.layer.cornerRadius = 22
         containerView.layer.cornerRadius = 22
         selectionStyle = .none
@@ -44,19 +48,8 @@ class SearchTableCell: UITableViewCell {
     }
     
     
-    func favoriteAction(){
-        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(favoriteImageTapped))
-        favouritImg.isUserInteractionEnabled = true
-        favouritImg.addGestureRecognizer(tap)
-    }
-    
-    @objc func favoriteImageTapped(){
-        if favouritImg.image == UIImage(named: "redFav"){
-            favouritImg.image =  UIImage(named: "emptyFav")
-        }else{
-            favouritImg.image =  UIImage(named: "redFav")
-        }
-        favoriteImageClosure?()
+    @IBAction func favActionBtn(_ sender: Any) {
+        favoriteClosure?()
     }
     
     var searchCellViewModel : GeneralCellViewModel?  {

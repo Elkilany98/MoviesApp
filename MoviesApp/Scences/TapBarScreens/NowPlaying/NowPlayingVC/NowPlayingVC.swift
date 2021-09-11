@@ -113,7 +113,7 @@ extension NowPlayingVC : UITableViewDelegate , UITableViewDataSource , UITableVi
         
         let cellViewModel = viewModel.getCellViewModel(index: indexPath)
         cell.nowPlayingCellViewModel = cellViewModel
-        cell.favoriteImageClosure = { [weak self] in
+        cell.favoriteClosure = { [weak self] in
             guard  let self = self  else {return}
             self.viewModel.addToRealmDateBase(indexPath: indexPath)
         }
